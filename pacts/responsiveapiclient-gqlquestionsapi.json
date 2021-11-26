@@ -1,0 +1,32 @@
+{
+  "consumer": {
+    "name": "ResponsiveApiClient"
+  },
+  "provider": {
+    "name": "GqlQuestionsApi"
+  },
+  "interactions": [
+    {
+      "description": "a request for userstage",
+      "providerState": "User stage",
+      "request": {
+        "method": "GET",
+        "path": "/api/userstage",
+        "query": "user=name"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "stage": "news_1"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

@@ -7,7 +7,8 @@
     "start": "node app/app.js",
     "test": "node_modules/.bin/cypress run --browser chrome --headless --env shippable=true",
     "local": "node_modules/.bin/cypress open --browser chrome",
-    "dashboard": "node_modules/.bin/cypress run --record --key $CYPRESS_KEY --browser chrome --headless"
+    "dashboard": "node_modules/.bin/cypress run --record --key $CYPRESS_KEY --browser chrome --headless",
+    "pact:publish": "pact-broker publish ./pacts --consumer-app-version=\"$(npx @pact-foundation/absolute-version)\" --tag-with-git-branch --broker-base-url=https://pact-broker-22.herokuapp.com/"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,7 @@
   "author": "Alejandro Sanchez-Giraldo",
   "license": "MIT",
   "dependencies": {
+    "@pact-foundation/pact": "^9.17.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "debug": "^4.1.1",
@@ -34,6 +36,8 @@
   },
   "homepage": "https://github.com/ale-sanchez-g/responsivefight#readme",
   "devDependencies": {
-    "cypress": "^7.7.0"
+    "@pact-foundation/absolute-version": "^0.0.4",
+    "cypress": "^7.7.0",
+    "mocha": "^9.1.3"
   }
 }
